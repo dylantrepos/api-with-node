@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// Faire une update à partir d'un id
+// Make an update from a valid ID
 router.put("/:id", (req, res) => {
     if(!ObjectID.isValid(req.params.id)) return (res.status(400).send(`ID unknow : ${req.params.id}`));
     const updateRecord = {
@@ -41,7 +41,7 @@ router.put("/:id", (req, res) => {
         );
 });
 
-// Faire une suppression à partir d'un id
+// Remove an element from a valid ID
 router.delete("/:id", (req, res) => {
     if(!ObjectID.isValid(req.params.id)) return (res.status(400).send(`ID unknow : ${req.params.id}`));
     PostsModel.findByIdAndDelete(
